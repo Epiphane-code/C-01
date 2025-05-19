@@ -5,17 +5,33 @@ a=$1
 b=$2
 op=$3
 
+addition="+"
+soustraction="-"
+multiplication="*"
+division="/"
+modulo="%"
+
 read a b op
 
-if [ "$op" = "+" ]; then
-    result=$((a + b))
-elif  [ "$op" = "-" ]; then 
-    result=$((a - b))
-elif  [ "$op" = "*" ]; then 
-    result=$((a * b))
-elif  [ "$op" = "/" ]; then 
-    result=$((a / b))   
+case $op in
+$addition)
+echo "Résultat : $(a + b)"
+;;
+$soustraction)
+echo "Résultat : $(a - b)"
+;;
+$multiplication)
+echo "Résultat : $(a * b)"
+;;
+$division)
+if [ b != 0 ]; then
+echo "Résultat : $(a / b)"
 fi
-echo "Résultat : $result"
-
-exit 0
+;;
+$modulo)
+echo "Résultat : $(a % b)"
+;;
+*)
+echo "Résultat : 0"
+;;
+esac
