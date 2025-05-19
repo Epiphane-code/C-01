@@ -1,9 +1,5 @@
 #!/bin/bash
-# C'est un script qui affiche l'utilisation du disque de façon lisible
-
-a=$1
-b=$2
-op=$3
+# simple calculatrice
 
 addition="+"
 soustraction="-"
